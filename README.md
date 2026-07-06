@@ -1,3 +1,4 @@
+
 # Arpit Dubey — Portfolio
 
 ## Folder structure
@@ -17,7 +18,8 @@ assets/
 ```
 
 ## To finish setup
-1. Drop a square-ish photo into `images/profile.jpg`.
+1. Drop a square-ish photo into `<img width="1254" height="1254" alt="Profile" src="https://github.com/user-attachments/assets/5702b2f1-2016-41f1-a25a-e6c5c3015a51" />
+images/profile.jpg`.
 2. Add your two project files into `projects/`, OR open `index.html` and change the two lines:
    ```html
    <a class="project__link" href="projects/retail-sales-dashboard.pdf">View dashboard →</a>
