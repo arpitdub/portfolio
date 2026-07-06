@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arpit Dubey — Business Analyst</title>
+<meta name="description" content="Arpit Dubey — Business Analyst. Excel, SQL, Power BI & Python for data-driven decisions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a href="#top" class="nav__mark">AD<span class="nav__mark-dot">.</span></a>
+  <nav class="nav__links">
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a href="resume/Arpit_Dubey_Resume.pdf" class="nav__resume" download>Résumé ↓</a>
+  <button class="nav__burger" id="burger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about">About</a>
+  <a href="#work">Work</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
+  <a href="resume/Arpit_Dubey_Resume.pdf" download>Résumé ↓</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero__inner">
+    <p class="hero__eyebrow">// business_analyst.query()</p>
+    <h1 class="hero__title">
+      I turn raw<br>
+      transaction data<br>
+      into <span class="hero__title-accent">decisions.</span>
+    </h1>
+    <p class="hero__sub">
+      Arpit Dubey — MBA Business Analytics candidate at DAVV, Indore.
+      I build dashboards and segmentation models that tell people what
+      to do next, not just what happened.
+    </p>
+    <div class="hero__cta">
+      <a href="#work" class="btn btn--primary">See the work</a>
+      <a href="#contact" class="btn btn--ghost">Get in touch</a>
+    </div>
+  </div>
+
+  <!-- Signature element: live KPI dashboard strip -->
+  <div class="kpi-strip" id="kpiStrip">
+    <div class="kpi-card" data-target="12000" data-suffix="+" data-decimals="0">
+      <span class="kpi-card__label">transactions analyzed</span>
+      <span class="kpi-card__value"><span class="kpi-num">0</span></span>
+      <div class="kpi-card__bar"><i style="--fill:88%"></i></div>
+    </div>
+    <div class="kpi-card" data-target="50000" data-suffix="+" data-decimals="0">
+      <span class="kpi-card__label">purchase records segmented</span>
+      <span class="kpi-card__value"><span class="kpi-num">0</span></span>
+      <div class="kpi-card__bar"><i style="--fill:95%"></i></div>
+    </div>
+    <div class="kpi-card kpi-card--amber" data-target="18" data-suffix="%" data-decimals="0">
+      <span class="kpi-card__label">of customers drive 48% of revenue</span>
+      <span class="kpi-card__value"><span class="kpi-num">0</span></span>
+      <div class="kpi-card__bar"><i style="--fill:18%"></i></div>
+    </div>
+    <div class="kpi-card" data-target="8.46" data-suffix="/10" data-decimals="2">
+      <span class="kpi-card__label">CGPA, MBA Business Analytics</span>
+      <span class="kpi-card__value"><span class="kpi-num">0</span></span>
+      <div class="kpi-card__bar"><i style="--fill:84.6%"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-label"><span>01</span> About</div>
+  <div class="about__grid">
+    <div class="about__photo">
+      <img src="images/profile.jpg" alt="Arpit Dubey" onerror="this.parentElement.classList.add('about__photo--empty')">
+      <div class="about__photo-fallback">Add<br>images/profile.jpg</div>
+    </div>
+    <div class="about__text">
+      <p class="about__lead">
+        I'm an MBA Business Analytics candidate at the School of Data Science
+        &amp; Forecasting, DAVV — currently in my second semester, with a
+        Bachelor of Commerce (Honours) already behind me.
+      </p>
+      <p>
+        My work sits at the point where a spreadsheet stops being a spreadsheet
+        and starts being a decision. I've analyzed retail transactions to find
+        where profit actually leaks, and segmented customers by recency,
+        frequency and monetary value to find out who's worth protecting and
+        who's about to churn. I care less about the chart being pretty and
+        more about the sentence someone can write underneath it.
+      </p>
+      <div class="about__facts">
+        <div class="fact">
+          <span class="fact__k">Location</span>
+          <span class="fact__v">Indore, M.P., India</span>
+        </div>
+        <div class="fact">
+          <span class="fact__k">Currently</span>
+          <span class="fact__v">MBA Business Analytics @ DAVV (2025–27)</span>
+        </div>
+        <div class="fact">
+          <span class="fact__k">Focus</span>
+          <span class="fact__v">Excel · SQL · Power BI · Python</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK / PROJECTS -->
+<section class="work" id="work">
+  <div class="section-label"><span>02</span> Work</div>
+
+  <article class="project">
+    <div class="project__bar">
+      <span class="project__dot"></span>
+      <span class="project__name">Retail Sales Analysis Dashboard</span>
+      <span class="project__date">April 2026</span>
+    </div>
+    <div class="project__body">
+      <p>
+        Analyzed 12,000+ retail transactions across 4 regions and 5 product
+        categories, then built an interactive Power BI dashboard to surface
+        where revenue and profitability were actually coming from.
+      </p>
+      <ul class="project__metrics">
+        <li><b>10+</b> live KPIs tracked (sales, margin, AOV, growth, region)</li>
+        <li><b>~42%</b> of revenue traced to the Technology category</li>
+        <li><b>25%+</b> discounting identified as the profitability breakpoint</li>
+      </ul>
+      <div class="project__tags">
+        <span>Excel</span><span>SQL</span><span>Power BI</span>
+      </div>
+      <a class="project__link" href="projects/retail-sales-dashboard.pdf">View dashboard →</a>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="project__bar">
+      <span class="project__dot"></span>
+      <span class="project__name">Customer Segmentation Using Python &amp; SQL</span>
+      <span class="project__date">July 2026</span>
+    </div>
+    <div class="project__body">
+      <p>
+        Engineered RFM (Recency, Frequency, Monetary) metrics on 50,000+
+        purchase transactions from 5,000 customers, then applied K-Means
+        clustering to split them into four behavioral groups.
+      </p>
+      <ul class="project__metrics">
+        <li><b>4</b> behavioral segments from RFM + K-Means</li>
+        <li><b>18%</b> of customers generate <b>~48%</b> of total revenue</li>
+        <li><b>17%</b> flagged as high churn-risk for retention targeting</li>
+      </ul>
+      <div class="project__tags">
+        <span>Python</span><span>Pandas</span><span>Scikit-learn</span><span>SQL</span>
+      </div>
+      <a class="project__link" href="projects/customer-segmentation.pdf">View analysis →</a>
+    </div>
+  </article>
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <div class="section-label"><span>03</span> Skills</div>
+  <div class="skills__grid">
+    <div class="skill-group">
+      <h3>Tools</h3>
+      <div class="chips">
+        <span>Python</span><span>Advanced Excel</span><span>Power BI</span>
+        <span>Postgre SQL</span><span>Power Query</span><span>DAX</span>
+        <span>VS Code</span><span>Jupyter</span><span>MS Office</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>SQL</h3>
+      <div class="chips">
+        <span>Data Extraction</span><span>Joins (Inner/Left/Right)</span>
+        <span>GROUP BY</span><span>HAVING</span><span>Aggregate Functions</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>Python</h3>
+      <div class="chips">
+        <span>Pandas</span><span>NumPy</span><span>Data Cleaning</span>
+        <span>Data Visualization</span><span>Customer Segmentation</span><span>RFM Analysis</span><span>EDA</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>Excel</h3>
+      <div class="chips">
+        <span>Pivot Tables</span><span>XLOOKUP</span><span>INDEX-MATCH</span>
+        <span>IF Statements</span><span>SUMIFS</span><span>COUNTIFS</span><span>Conditional Formatting</span>
+      </div>
+    </div>
+    <div class="skill-group skill-group--wide">
+      <h3>Soft Skills</h3>
+      <div class="chips">
+        <span>Attention to Detail</span><span>Teamwork &amp; Collaboration</span><span>Adaptive Learning</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="creds">
+    <div class="creds__col">
+      <h4>Education</h4>
+      <div class="cred">
+        <div class="cred__top"><b>School of Data Science &amp; Forecasting, DAVV</b><span>Jun 2025 – May 2027</span></div>
+        <div class="cred__sub">MBA in Business Analytics (Pursuing) · CGPA 8.46/10.00 · Indore</div>
+      </div>
+      <div class="cred">
+        <div class="cred__top"><b>Renaissance College of Commerce &amp; Management</b><span>Aug 2019 – Apr 2022</span></div>
+        <div class="cred__sub">Bachelor of Commerce (Honours) · 85% · Indore</div>
+      </div>
+    </div>
+    <div class="creds__col">
+      <h4>Certifications</h4>
+      <div class="cred"><div class="cred__top"><b>Power BI Data Analyst Certification</b><span>2026</span></div><div class="cred__sub">Coursera</div></div>
+      <div class="cred"><div class="cred__top"><b>AI — Business Analyst</b><span>2026</span></div><div class="cred__sub">Skill India Digital Hub</div></div>
+      <div class="cred"><div class="cred__top"><b>Advanced Excel</b><span>2025</span></div><div class="cred__sub">Skill Learn Platform</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-label"><span>04</span> Contact</div>
+  <h2 class="contact__title">Let's talk data.</h2>
+  <p class="contact__sub">Open to Business Analyst roles, internships and data projects.</p>
+
+  <div class="contact__grid">
+    <a class="contact__card" href="mailto:arpitd.0804@gmail.com">
+      <span class="contact__label">Email</span>
+      <span class="contact__value">arpitd.0804@gmail.com</span>
+    </a>
+    <a class="contact__card" href="https://www.linkedin.com/in/arpitdub" target="_blank" rel="noopener">
+      <span class="contact__label">LinkedIn</span>
+      <span class="contact__value">linkedin.com/in/arpitdub</span>
+    </a>
+    <a class="contact__card" href="https://github.com/arpitdub" target="_blank" rel="noopener">
+      <span class="contact__label">GitHub</span>
+      <span class="contact__value">github.com/arpitdub</span>
+    </a>
+    <a class="contact__card" href="tel:+919575363463">
+      <span class="contact__label">Phone</span>
+      <span class="contact__value">+91 95753 63463</span>
+    </a>
+  </div>
+
+  <footer class="footer">
+    <span>Indore, M.P — 452010, India</span>
+    <span>© <span id="year"></span> Arpit Dubey</span>
+  </footer>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
