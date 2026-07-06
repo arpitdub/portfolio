@@ -18,7 +18,7 @@ assets/
 ```
 
 ## To finish setup
-1. Drop a square-ish photo into `<img width="1254" height="1254" alt="profile" src="https://github.com/user-attachments/assets/be4be4ee-50cd-4caf-a427-ed30abe3b646"/> images/profile.jpg`.
+1. Drop a square-ish photo into `<img width="1254" height="1254" alt="profile" src="https://github.com/user-attachments/assets/974fe0c9-a4df-4dc1-8b0b-c7a5f7206111"/>images/profile.jpg`.
 2. Add your two project files into `projects/`, OR open `index.html` and change the two lines:
    ```html
    <a class="project__link" href="projects/retail-sales-dashboard.pdf">View dashboard →</a>
