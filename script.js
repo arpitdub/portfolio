@@ -159,12 +159,12 @@ if (window.Typed && document.getElementById('typedRoles')) {
 if (window.particlesJS && document.getElementById('particles-hero') && !prefersReducedMotion) {
   particlesJS('particles-hero', {
     particles: {
-      number: { value: 46, density: { enable: true, value_area: 900 } },
-      color: { value: ['#3B82F6', '#8B5CF6', '#06B6D4'] },
+      number: { value: 30, density: { enable: true, value_area: 1000 } },
+      color: { value: ['#2563EB', '#7C3AED', '#0891B2'] },
       shape: { type: 'circle' },
-      opacity: { value: 0.35, random: true },
-      size: { value: 2.4, random: true },
-      line_linked: { enable: true, distance: 130, color: '#3B82F6', opacity: 0.18, width: 1 },
+      opacity: { value: 0.22, random: true },
+      size: { value: 2, random: true },
+      line_linked: { enable: true, distance: 130, color: '#2563EB', opacity: 0.1, width: 1 },
       move: { enable: true, speed: 0.7, direction: 'none', random: true, out_mode: 'out' }
     },
     interactivity: {

@@ -39,19 +39,43 @@
 }
 
 [data-theme="light"] {
-  --bg: #F6F8FC;
+  --bg: #FBFCFE;
   --bg-alt: #FFFFFF;
-  --surface: rgba(15,23,42,0.035);
-  --surface-strong: rgba(15,23,42,0.06);
-  --border: rgba(15,23,42,0.09);
-  --border-strong: rgba(15,23,42,0.16);
+  --surface: rgba(15,23,42,0.028);
+  --surface-strong: rgba(15,23,42,0.05);
+  --border: rgba(15,23,42,0.10);
+  --border-strong: rgba(15,23,42,0.18);
 
   --text: #0F172A;
-  --text-soft: #334155;
-  --muted: #64748B;
+  --text-soft: #3F4B5E;
+  --muted: #6B7688;
 
-  --shadow-glass: 0 20px 60px -28px rgba(15,23,42,0.22);
+  /* slightly deeper, more restrained brand tones for a corporate-appropriate contrast on white */
+  --primary: #2563EB;
+  --secondary: #7C3AED;
+  --accent: #0891B2;
+
+  --primary-soft: rgba(37,99,235,0.07);
+  --secondary-soft: rgba(124,58,237,0.07);
+  --accent-soft: rgba(8,145,178,0.08);
+  --amber-soft: rgba(245,165,36,0.10);
+
+  --shadow-glass: 0 16px 40px -26px rgba(15,23,42,0.14);
 }
+
+/* Light theme reads as clean and minimal, not "dark theme in reverse":
+   ambient decoration is dialed way back so the content carries the page. */
+[data-theme="light"] .bg-wash { opacity: 0.35; animation: none; }
+[data-theme="light"] .blob { opacity: 0.12; filter: blur(90px); }
+[data-theme="light"] .grain { opacity: 0.015; }
+[data-theme="light"] .cursor-glow { display: none; }
+[data-theme="light"] .glass {
+  box-shadow: 0 1px 2px rgba(15,23,42,0.04), var(--shadow-glass);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+}
+[data-theme="light"] .kpi-card__value { color: var(--text); }
+[data-theme="light"] .hero__title-accent { -webkit-text-fill-color: initial; background: none; color: var(--primary); }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -590,10 +614,6 @@ img { max-width: 100%; display: block; }
 }
 .contact-form small { color: var(--muted); font-size: 12.5px; }
 .form-status { font-size: 13px; color: var(--accent); min-height: 16px; }
-
-.map-embed { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); height: 220px; margin-top: 20px; filter: grayscale(0.3) invert(0.92) contrast(0.9); }
-[data-theme="light"] .map-embed { filter: none; }
-.map-embed iframe { width: 100%; height: 100%; border: 0; }
 
 .footer {
   margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--border);
