@@ -13,15 +13,16 @@
 <body>
 
 <div class="grain"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
 
 <!-- NAV -->
 <header class="nav" id="nav">
   <a href="#top" class="nav__mark">AD<span class="nav__mark-dot">.</span></a>
   <nav class="nav__links">
-    <a href="#about">About</a>
-    <a href="#work">Work</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
+    <a href="#about" data-nav="about">About</a>
+    <a href="#work" data-nav="work">Work</a>
+    <a href="#skills" data-nav="skills">Skills</a>
+    <a href="#contact" data-nav="contact">Contact</a>
   </nav>
   <a href="resume/Arpit_Dubey_Resume.pdf" class="nav__resume" download>Résumé ↓</a>
   <button class="nav__burger" id="burger" aria-label="Open menu">
@@ -40,12 +41,13 @@
 
 <!-- HERO -->
 <section class="hero" id="top">
+  <div class="hero__grid" id="heroGrid" aria-hidden="true"></div>
   <div class="hero__inner">
-    <p class="hero__eyebrow">// business_analyst.query()</p>
+    <p class="hero__eyebrow" data-typewriter="// business_analyst.query()"></p>
     <h1 class="hero__title">
-      I turn raw<br>
-      transaction data<br>
-      into <span class="hero__title-accent">decisions.</span>
+      <span class="reveal-line"><span class="reveal-word">I</span> <span class="reveal-word">turn</span> <span class="reveal-word">raw</span></span>
+      <span class="reveal-line"><span class="reveal-word">transaction</span> <span class="reveal-word">data</span></span>
+      <span class="reveal-line"><span class="reveal-word">into</span> <span class="hero__title-accent reveal-word">decisions.</span></span>
     </h1>
     <p class="hero__sub">
       Arpit Dubey — MBA Business Analytics candidate at DAVV, Indore.
@@ -53,8 +55,8 @@
       to do next, not just what happened.
     </p>
     <div class="hero__cta">
-      <a href="#work" class="btn btn--primary">See the work</a>
-      <a href="#contact" class="btn btn--ghost">Get in touch</a>
+      <a href="#work" class="btn btn--primary btn--magnetic"><span>See the work</span></a>
+      <a href="#contact" class="btn btn--ghost btn--magnetic"><span>Get in touch</span></a>
     </div>
   </div>
 
@@ -127,7 +129,7 @@
 <section class="work" id="work">
   <div class="section-label"><span>02</span> Work</div>
 
-  <article class="project">
+  <article class="project tilt-card">
     <div class="project__bar">
       <span class="project__dot"></span>
       <span class="project__name">Retail Sales Analysis Dashboard</span>
@@ -151,7 +153,7 @@
     </div>
   </article>
 
-  <article class="project">
+  <article class="project tilt-card">
     <div class="project__bar">
       <span class="project__dot"></span>
       <span class="project__name">Customer Segmentation Using Python &amp; SQL</span>
@@ -245,19 +247,19 @@
   <p class="contact__sub">Open to Business Analyst roles, internships and data projects.</p>
 
   <div class="contact__grid">
-    <a class="contact__card" href="mailto:arpitd.0804@gmail.com">
+    <a class="contact__card glow-card" href="mailto:arpitd.0804@gmail.com">
       <span class="contact__label">Email</span>
       <span class="contact__value">arpitd.0804@gmail.com</span>
     </a>
-    <a class="contact__card" href="https://www.linkedin.com/in/arpitdub" target="_blank" rel="noopener">
+    <a class="contact__card glow-card" href="https://www.linkedin.com/in/arpitdub" target="_blank" rel="noopener">
       <span class="contact__label">LinkedIn</span>
       <span class="contact__value">linkedin.com/in/arpitdub</span>
     </a>
-    <a class="contact__card" href="https://github.com/arpitdub" target="_blank" rel="noopener">
+    <a class="contact__card glow-card" href="https://github.com/arpitdub" target="_blank" rel="noopener">
       <span class="contact__label">GitHub</span>
       <span class="contact__value">github.com/arpitdub</span>
     </a>
-    <a class="contact__card" href="tel:+919575363463">
+    <a class="contact__card glow-card" href="tel:+919575363463">
       <span class="contact__label">Phone</span>
       <span class="contact__value">+91 95753 63463</span>
     </a>
