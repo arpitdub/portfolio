@@ -17,7 +17,8 @@ assets/
 ```
 
 ## To finish setup
-1. Drop a square-ish photo into `images/c:\Users\win10\Documents\Documents\PHOTO\Profile.jpg`.
+1. Drop a square-ish photo into `<img width="1254" height="1254" alt="Profile" src="https://github.com/user-attachments/assets/a18e395a-1f0b-43f1-a3f3-067eb4543ed2" />
+
 2. Add your two project files into `projects/`, OR open `index.html` and change the two lines:
    ```html
    <a class="project__link" href="projects/retail-sales-dashboard.pdf">View dashboard →</a>
