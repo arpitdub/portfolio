@@ -1,679 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arpit Dubey — Business Analyst</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <!-- Font Awesome 6 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <style>
-    /* ----- ROOT – vibrant, professional palette ----- */
-    :root {
-      --bg-primary: #0a0f1e;
-      --bg-card: rgba(255,255,255,0.07);
-      --bg-card-hover: rgba(255,255,255,0.13);
-      --glass-border: rgba(255,255,255,0.09);
-      --glass-shadow: 0 20px 40px -10px rgba(0,0,0,0.7);
-      --primary: #4f8cff;
-      --primary-light: #7aabff;
-      --secondary: #a78bfa;
-      --accent: #34d399;
-      --text-primary: #f0f4ff;
-      --text-muted: #b9c8f0;
-      --text-soft: #d6e2ff;
-      --font-display: 'Space Grotesk', sans-serif;
-      --font-body: 'Inter', sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
-      --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arpit Dubey — Business Analyst</title>
+<meta name="description" content="Arpit Dubey — Business Analyst. Excel, SQL, Power BI & Python for data-driven decisions.">
 
-    * { margin:0; padding:0; box-sizing:border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      font-family: var(--font-body);
-      line-height: 1.6;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-    /* custom scrollbar */
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #141b2b; }
-    ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 20px; }
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- AOS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<!-- Swiper -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css">
+<!-- Bootstrap grid/utilities -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
 
-    /* glassmorphism */
-    .glass {
-      background: var(--bg-card);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid var(--glass-border);
-      box-shadow: var(--glass-shadow);
-    }
-    .glass-strong {
-      background: rgba(10,15,30,0.75);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border: 1px solid rgba(255,255,255,0.06);
-      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.6);
-    }
-
-    /* typography */
-    .font-display { font-family: var(--font-display); }
-    .font-mono { font-family: var(--font-mono); }
-
-    /* ----- ANIMATED BACKGROUND BLOBS (vibrant) ----- */
-    .blob {
-      position: fixed;
-      border-radius: 50%;
-      filter: blur(120px);
-      opacity: 0.25;
-      z-index: 0;
-      pointer-events: none;
-      animation: floatBlob 22s infinite alternate ease-in-out;
-    }
-    .blob-1 { width: 700px; height: 700px; background: #2563eb; top: -300px; left: -250px; opacity: 0.2; }
-    .blob-2 { width: 600px; height: 600px; background: #7c3aed; bottom: -200px; right: -200px; animation-duration: 28s; opacity: 0.18; }
-    .blob-3 { width: 400px; height: 400px; background: #06b6d4; top: 40%; left: 30%; animation-duration: 30s; opacity: 0.12; }
-    @keyframes floatBlob {
-      0% { transform: translate(0, 0) scale(1); }
-      33% { transform: translate(40px, -60px) scale(1.1); }
-      66% { transform: translate(-30px, 40px) scale(0.9); }
-      100% { transform: translate(20px, -30px) scale(1.05); }
-    }
-
-    /* ----- NAVBAR (premium) ----- */
-    .navbar-premium {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1050;
-      padding: 10px 0;
-      transition: all 0.4s ease;
-      background: rgba(10,15,30,0.5);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-    .navbar-premium.scrolled {
-      background: rgba(10,15,30,0.85);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-    }
-    .navbar-premium .nav-link {
-      color: var(--text-muted) !important;
-      font-weight: 500;
-      font-size: 0.9rem;
-      padding: 0.5rem 1rem !important;
-      position: relative;
-      transition: var(--transition-smooth);
-    }
-    .navbar-premium .nav-link:hover,
-    .navbar-premium .nav-link.active {
-      color: #fff !important;
-    }
-    .navbar-premium .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: 2px;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background: var(--primary);
-      transition: all 0.3s ease;
-      transform: translateX(-50%);
-      border-radius: 4px;
-    }
-    .navbar-premium .nav-link:hover::after,
-    .navbar-premium .nav-link.active::after {
-      width: 60%;
-    }
-    .navbar-premium .brand {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: #fff;
-      letter-spacing: -0.02em;
-    }
-    .navbar-premium .brand span { color: var(--primary); }
-    .btn-resume {
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.15);
-      color: #fff;
-      padding: 6px 20px;
-      border-radius: 40px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      transition: var(--transition-smooth);
-      text-decoration: none;
-    }
-    .btn-resume:hover {
-      background: var(--primary);
-      border-color: var(--primary);
-      color: #fff;
-      transform: scale(1.03);
-    }
-
-    /* ----- HERO (vibrant contrast) ----- */
-    .hero-section {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 120px 0 60px;
-      z-index: 1;
-    }
-    .hero-content { position: relative; z-index: 2; }
-    .hero-greeting {
-      font-size: 1.2rem;
-      color: var(--primary-light);
-      font-weight: 500;
-      letter-spacing: 1px;
-      margin-bottom: 0.5rem;
-    }
-    .hero-name {
-      font-family: var(--font-display);
-      font-size: clamp(2.8rem, 8vw, 5.5rem);
-      font-weight: 700;
-      line-height: 1.05;
-      margin-bottom: 0.8rem;
-      color: #fff;
-    }
-    .hero-name .highlight { color: var(--primary); }
-    .hero-typed {
-      font-size: 1.3rem;
-      color: var(--text-soft);
-      min-height: 3rem;
-      margin-bottom: 1.8rem;
-    }
-    .hero-typed .typed-cursor { color: var(--primary); }
-    .hero-buttons .btn {
-      padding: 12px 32px;
-      border-radius: 60px;
-      font-weight: 600;
-      transition: var(--transition-smooth);
-      margin-right: 12px;
-      margin-bottom: 10px;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn-primary-glow {
-      background: var(--primary);
-      border: none;
-      color: #fff;
-      box-shadow: 0 8px 25px rgba(79,140,255,0.35);
-    }
-    .btn-primary-glow:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 35px rgba(79,140,255,0.55);
-      background: #3b7ae0;
-      color: #fff;
-    }
-    .btn-outline-glass {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.15);
-      color: #fff;
-    }
-    .btn-outline-glass:hover {
-      background: rgba(255,255,255,0.12);
-      transform: translateY(-3px);
-      color: #fff;
-      border-color: var(--primary);
-    }
-    .hero-socials a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: var(--text-muted);
-      transition: var(--transition-smooth);
-      margin-right: 10px;
-      font-size: 1.2rem;
-      text-decoration: none;
-    }
-    .hero-socials a:hover {
-      background: var(--primary);
-      color: #fff;
-      border-color: var(--primary);
-      transform: translateY(-4px) scale(1.05);
-      box-shadow: 0 8px 25px rgba(79,140,255,0.35);
-    }
-
-    /* profile ring */
-    .profile-ring {
-      position: relative;
-      width: 260px;
-      height: 260px;
-      border-radius: 50%;
-      background: conic-gradient(from 0deg, var(--primary), var(--secondary), var(--accent), var(--primary));
-      padding: 4px;
-      animation: spinRing 10s linear infinite;
-      margin: 0 auto;
-    }
-    .profile-ring-inner {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: var(--bg-primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-    .profile-ring-inner img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-    }
-    @keyframes spinRing {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    /* stat pills */
-    .stat-pill {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 8px 22px;
-      border-radius: 40px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.9rem;
-      color: var(--text-soft);
-      backdrop-filter: blur(6px);
-      margin: 4px;
-    }
-    .stat-pill i { color: var(--primary); }
-    .stat-pill strong { color: #fff; font-weight: 600; }
-
-    /* ----- SECTION TITLES (high contrast) ----- */
-    .section-title {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 2.4rem;
-      margin-bottom: 0.8rem;
-      color: #fff;
-    }
-    .section-title .highlight { color: var(--primary); }
-    .section-subtitle {
-      color: var(--text-soft);
-      margin-bottom: 3rem;
-      font-size: 1.1rem;
-      font-weight: 400;
-    }
-
-    /* ----- GLASS CARDS (vibrant) ----- */
-    .glass-card {
-      background: var(--bg-card);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid var(--glass-border);
-      border-radius: 24px;
-      padding: 1.8rem 2rem;
-      transition: all var(--transition-smooth);
-      height: 100%;
-      color: var(--text-primary);
-    }
-    .glass-card:hover {
-      background: var(--bg-card-hover);
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px -12px rgba(0,0,0,0.6);
-      border-color: rgba(79,140,255,0.25);
-    }
-    .glass-card .text-muted { color: var(--text-muted) !important; }
-    .glass-card p { color: var(--text-soft); }
-
-    /* skills progress */
-    .skill-item { margin-bottom: 1.2rem; }
-    .skill-item .skill-label {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.9rem;
-      color: var(--text-soft);
-      margin-bottom: 4px;
-    }
-    .skill-item .skill-bar {
-      height: 6px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    .skill-item .skill-bar .fill {
-      height: 100%;
-      border-radius: 10px;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      width: 0%;
-      transition: width 1.2s ease;
-    }
-
-    /* project cards */
-    .project-card .project-tags span {
-      background: rgba(79,140,255,0.15);
-      color: var(--primary-light);
-      padding: 4px 14px;
-      border-radius: 40px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      margin-right: 6px;
-      border: 1px solid rgba(79,140,255,0.1);
-    }
-
-    /* contact cards */
-    .contact-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 18px;
-      background: rgba(79,140,255,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
-      color: var(--primary);
-      margin-bottom: 12px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* back to top */
-    .back-top {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      z-index: 1060;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      box-shadow: 0 8px 25px rgba(79,140,255,0.35);
-      opacity: 0;
-      transform: scale(0.8);
-      transition: all 0.3s ease;
-      pointer-events: none;
-    }
-    .back-top.visible { opacity: 1; transform: scale(1); pointer-events: auto; }
-    .back-top:hover { background: #3b7ae0; transform: scale(1.08); }
-
-    /* scroll progress */
-    .scroll-progress {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      z-index: 1060;
-      width: 0%;
-      transition: width 0.1s linear;
-    }
-
-    /* whatsapp float */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 30px;
-      left: 30px;
-      z-index: 1060;
-      background: #25D366;
-      width: 54px;
-      height: 54px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 2rem;
-      box-shadow: 0 8px 30px rgba(37,211,102,0.3);
-      transition: var(--transition-smooth);
-      text-decoration: none;
-    }
-    .whatsapp-float:hover { transform: scale(1.08); color: #fff; }
-
-    /* responsive */
-    @media (max-width: 992px) {
-      .hero-section { text-align: center; }
-      .hero-buttons .btn { margin-right: 6px; }
-    }
-    @media (max-width: 768px) {
-      .profile-ring { width: 180px; height: 180px; }
-      .glass-card { padding: 1.2rem; }
-    }
-
-    /* AOS */
-    [data-aos] { pointer-events: none; }
-    [data-aos].aos-animate { pointer-events: auto; }
-
-    /* scroll indicator */
-    .scroll-indicator {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: var(--text-muted);
-      animation: bounceDown 2s infinite;
-    }
-    @keyframes bounceDown {
-      0%, 100% { transform: translateX(-50%) translateY(0); }
-      50% { transform: translateX(-50%) translateY(10px); }
-    }
-
-    /* badge override */
-    .badge-soft {
-      background: rgba(79,140,255,0.12);
-      color: var(--primary-light);
-      padding: 6px 14px;
-      border-radius: 40px;
-      font-weight: 500;
-      border: 1px solid rgba(79,140,255,0.08);
-    }
-  </style>
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!-- BLOBS -->
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
-  <div class="blob blob-3"></div>
+<body data-theme="dark">
 
-  <!-- SCROLL PROGRESS -->
-  <div class="scroll-progress" id="scrollProgress"></div>
+<!-- LOADER -->
+<div class="loader" id="loader">
+  <div class="loader__mark">AD<div class="loader__dots"><span></span><span></span><span></span></div></div>
+</div>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-premium" id="mainNav">
-    <div class="container">
-      <a class="brand" href="#">Arpit<span>.</span></a>
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="color:#fff; font-size:1.5rem;">
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center gap-2">
-          <li class="nav-item"><a class="nav-link active" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          <li class="nav-item"><a class="btn-resume" href="resume/Arpit_Dubey_Resume.pdf" download><i class="fas fa-download me-1"></i> Resume</a></li>
-        </ul>
-      </div>
-    </div>
+<!-- AMBIENT LAYERS -->
+<div class="bg-wash" aria-hidden="true"></div>
+<div class="blob-field" aria-hidden="true">
+  <div class="blob blob--a"></div>
+  <div class="blob blob--b"></div>
+  <div class="blob blob--c"></div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a href="#top" class="nav__mark">AD<span class="nav__mark-dot">.</span></a>
+  <nav class="nav__links">
+    <a href="#about" data-nav="about">About</a>
+    <a href="#work" data-nav="work">Work</a>
+    <a href="#skills" data-nav="skills">Skills</a>
+    <a href="#certifications" data-nav="certifications">Certifications</a>
+    <a href="#contact" data-nav="contact">Contact</a>
   </nav>
+  <div class="nav__right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+      <i class="fa-solid fa-moon"></i><i class="fa-solid fa-sun"></i>
+    </button>
+    <a href="resume/Arpit_Dubey_Resume.pdf" class="nav__resume" download><i class="fa-solid fa-download"></i> Résumé</a>
+    <button class="nav__burger" id="burger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <section class="hero-section" id="home">
-    <div class="container hero-content">
-      <div class="row align-items-center gy-5">
-        <div class="col-lg-7 order-2 order-lg-1" data-aos="fade-right" data-aos-duration="1000">
-          <div class="hero-greeting"><i class="fas fa-wave-square me-2"></i> Hello, I'm</div>
-          <h1 class="hero-name">Arpit <span class="highlight">Dubey</span></h1>
-          <div class="hero-typed"><span id="typed-text"></span></div>
-          <div class="hero-buttons">
-            <a href="#projects" class="btn btn-primary-glow"><i class="fas fa-briefcase me-2"></i> View Work</a>
-            <a href="#contact" class="btn btn-outline-glass"><i class="fas fa-paper-plane me-2"></i> Contact</a>
-          </div>
-          <div class="hero-socials mt-4">
-            <a href="https://www.linkedin.com/in/arpitdub" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/arpitdub" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="mailto:arpitd.0804@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="tel:+919575363463"><i class="fas fa-phone"></i></a>
-          </div>
-          <div class="mt-4">
-            <span class="stat-pill"><i class="fas fa-database"></i> <strong>12K+</strong> Transactions</span>
-            <span class="stat-pill"><i class="fas fa-users"></i> <strong>5K</strong> Customers</span>
-            <span class="stat-pill"><i class="fas fa-graduation-cap"></i> <strong>8.46</strong> CGPA</span>
-          </div>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" data-nav="about"><i class="fa-solid fa-user"></i> About</a>
+  <a href="#work" data-nav="work"><i class="fa-solid fa-briefcase"></i> Work</a>
+  <a href="#skills" data-nav="skills"><i class="fa-solid fa-chart-line"></i> Skills</a>
+  <a href="#certifications" data-nav="certifications"><i class="fa-solid fa-certificate"></i> Certifications</a>
+  <a href="#contact" data-nav="contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+  <a href="resume/Arpit_Dubey_Resume.pdf" download><i class="fa-solid fa-download"></i> Résumé</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div id="particles-hero" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <p class="hero__eyebrow"><span id="typedRoles"></span></p>
+    <h1 class="hero__title">
+      <span class="reveal-line"><span class="reveal-word">I</span> <span class="reveal-word">turn</span> <span class="reveal-word">raw</span></span>
+      <span class="reveal-line"><span class="reveal-word">transaction</span> <span class="reveal-word">data</span></span>
+      <span class="reveal-line"><span class="reveal-word">into</span> <span class="hero__title-accent reveal-word">decisions.</span></span>
+    </h1>
+    <p class="hero__sub">
+      Arpit Dubey — MBA Business Analytics candidate at DAVV, Indore.
+      I build dashboards and segmentation models that tell people what
+      to do next, not just what happened.
+    </p>
+    <div class="hero__cta">
+      <a href="#work" class="btn btn--primary"><span>See the work</span></a>
+      <a href="#contact" class="btn btn--ghost"><span>Get in touch</span></a>
+    </div>
+    <div class="hero__socials">
+      <a href="mailto:arpitd.0804@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/arpitdub" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="https://github.com/arpitdub" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="tel:+919575363463" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+    </div>
+  </div>
+
+  <!-- Signature element: live KPI dashboard strip -->
+  <div class="kpi-strip">
+    <div class="kpi-card glass" data-target="12000" data-suffix="+" data-decimals="0">
+      <span class="kpi-card__label">transactions analyzed</span>
+      <span class="kpi-card__value"><span class="kpi-num">0</span></span>
+      <div class="kpi-card__bar"><i style="--fill:88%"></i></div>
+    </div>
+    <div class="kpi-card glass" data-target="50000" data-suffix="+" data-decimals="0">
+      <span class="kpi-card__label">purchase records segmented</span>
+      <span class="kpi-card__value"><span class="kpi-num">0</span></span>
+      <div class="kpi-card__bar"><i style="--fill:95%"></i></div>
+    </div>
+    <div class="kpi-card glass kpi-card--amber" data-target="18" data-suffix="%" data-decimals="0">
+      <span class="kpi-card__label">of customers drive 48% of revenue</span>
+      <span class="kpi-card__value"><span class="kpi-num">0</span></span>
+      <div class="kpi-card__bar"><i style="--fill:18%"></i></div>
+    </div>
+    <div class="kpi-card glass" data-target="8.46" data-suffix="/10" data-decimals="2">
+      <span class="kpi-card__label">CGPA, MBA Business Analytics</span>
+      <span class="kpi-card__value"><span class="kpi-num">0</span></span>
+      <div class="kpi-card__bar"><i style="--fill:84.6%"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-label"><span>01</span> About</div>
+  <div class="about__grid">
+    <div class="about__photo" data-aos="fade-right">
+      <div class="about__photo-inner">
+        <img src="images/profile.jpg" alt="Arpit Dubey" onerror="this.parentElement.parentElement.classList.add('about__photo--empty')">
+        <div class="about__photo-fallback">Add<br>images/profile.jpg</div>
+      </div>
+    </div>
+    <div class="about__text glass about__card" data-aos="fade-left">
+      <p class="about__lead">
+        I'm an MBA Business Analytics candidate at the School of Data Science
+        &amp; Forecasting, DAVV — currently in my second semester, with a
+        Bachelor of Commerce (Honours) already behind me.
+      </p>
+      <p>
+        My work sits at the point where a spreadsheet stops being a spreadsheet
+        and starts being a decision. I've analyzed retail transactions to find
+        where profit actually leaks, and segmented customers by recency,
+        frequency and monetary value to find out who's worth protecting and
+        who's about to churn. I care less about the chart being pretty and
+        more about the sentence someone can write underneath it.
+      </p>
+      <div class="about__facts">
+        <div class="fact"><span class="fact__k"><i class="fa-solid fa-location-dot"></i> Location</span><span class="fact__v">Indore, M.P., India</span></div>
+        <div class="fact"><span class="fact__k"><i class="fa-solid fa-graduation-cap"></i> Currently</span><span class="fact__v">MBA Business Analytics @ DAVV (2025–27)</span></div>
+        <div class="fact"><span class="fact__k"><i class="fa-solid fa-bullseye"></i> Focus</span><span class="fact__v">Excel · SQL · Power BI · Python</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Education timeline -->
+  <div class="timeline" data-aos="fade-up">
+    <div class="timeline__item">
+      <span class="timeline__dot"><i class="fa-solid fa-graduation-cap"></i></span>
+      <div class="timeline__top"><b>School of Data Science &amp; Forecasting, DAVV</b><span>Jun 2025 – May 2027</span></div>
+      <div class="timeline__sub">MBA in Business Analytics (Pursuing) · CGPA 8.46/10.00 · Indore</div>
+    </div>
+    <div class="timeline__item">
+      <span class="timeline__dot"><i class="fa-solid fa-graduation-cap"></i></span>
+      <div class="timeline__top"><b>Renaissance College of Commerce &amp; Management</b><span>Aug 2019 – Apr 2022</span></div>
+      <div class="timeline__sub">Bachelor of Commerce (Honours) · 85% · Indore</div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK / PROJECTS -->
+<section class="work" id="work">
+  <div class="section-label"><span>02</span> Work</div>
+
+  <article class="project tilt-card glass" data-aos="fade-up">
+    <div class="project__bar">
+      <span class="project__dot"></span>
+      <span class="project__name">Retail Sales Analysis Dashboard</span>
+      <span class="project__date">April 2026</span>
+    </div>
+    <div class="project__body">
+      <p>
+        Analyzed 12,000+ retail transactions across 4 regions and 5 product
+        categories, then built an interactive Power BI dashboard to surface
+        where revenue and profitability were actually coming from.
+      </p>
+      <ul class="project__metrics">
+        <li><b>10+</b> live KPIs tracked (sales, margin, AOV, growth, region)</li>
+        <li><b>~42%</b> of revenue traced to the Technology category</li>
+        <li><b>25%+</b> discounting identified as the profitability breakpoint</li>
+      </ul>
+      <div class="project__tags"><span>Excel</span><span>SQL</span><span>Power BI</span></div>
+      <a class="project__link" href="projects/retail-sales-dashboard.pdf">View dashboard <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </article>
+
+  <article class="project tilt-card glass" data-aos="fade-up" data-aos-delay="100">
+    <div class="project__bar">
+      <span class="project__dot"></span>
+      <span class="project__name">Customer Segmentation Using Python &amp; SQL</span>
+      <span class="project__date">July 2026</span>
+    </div>
+    <div class="project__body">
+      <p>
+        Engineered RFM (Recency, Frequency, Monetary) metrics on 50,000+
+        purchase transactions from 5,000 customers, then applied K-Means
+        clustering to split them into four behavioral groups.
+      </p>
+      <ul class="project__metrics">
+        <li><b>4</b> behavioral segments from RFM + K-Means</li>
+        <li><b>18%</b> of customers generate <b>~48%</b> of total revenue</li>
+        <li><b>17%</b> flagged as high churn-risk for retention targeting</li>
+      </ul>
+      <div class="project__tags"><span>Python</span><span>Pandas</span><span>Scikit-learn</span><span>SQL</span></div>
+      <a class="project__link" href="projects/customer-segmentation.pdf">View analysis <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </article>
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <div class="section-label"><span>03</span> Skills</div>
+  <div class="skills__grid">
+    <div class="skill-group glass" data-aos="fade-up">
+      <h3><i class="fa-solid fa-toolbox"></i> Tools</h3>
+      <div class="chips">
+        <span><i class="fa-brands fa-python"></i> Python</span><span>Advanced Excel</span><span>Power BI</span>
+        <span>Postgre SQL</span><span>Power Query</span><span>DAX</span>
+        <span>VS Code</span><span>Jupyter</span><span>MS Office</span>
+      </div>
+    </div>
+    <div class="skill-group glass" data-aos="fade-up" data-aos-delay="80">
+      <h3><i class="fa-solid fa-database"></i> SQL</h3>
+      <div class="chips">
+        <span>Data Extraction</span><span>Joins (Inner/Left/Right)</span>
+        <span>GROUP BY</span><span>HAVING</span><span>Aggregate Functions</span>
+      </div>
+    </div>
+    <div class="skill-group glass" data-aos="fade-up" data-aos-delay="120">
+      <h3><i class="fa-brands fa-python"></i> Python</h3>
+      <div class="chips">
+        <span>Pandas</span><span>NumPy</span><span>Data Cleaning</span>
+        <span>Data Visualization</span><span>Customer Segmentation</span><span>RFM Analysis</span><span>EDA</span>
+      </div>
+    </div>
+    <div class="skill-group glass" data-aos="fade-up" data-aos-delay="160">
+      <h3><i class="fa-solid fa-table-cells"></i> Excel</h3>
+      <div class="chips">
+        <span>Pivot Tables</span><span>XLOOKUP</span><span>INDEX-MATCH</span>
+        <span>IF Statements</span><span>SUMIFS</span><span>COUNTIFS</span><span>Conditional Formatting</span>
+      </div>
+    </div>
+    <div class="skill-group skill-group--wide glass" data-aos="fade-up" data-aos-delay="200">
+      <h3><i class="fa-solid fa-people-group"></i> Soft Skills</h3>
+      <div class="chips">
+        <span>Attention to Detail</span><span>Teamwork &amp; Collaboration</span><span>Adaptive Learning</span>
+      </div>
+    </div>
+
+    <!-- Proficiency snapshot -->
+    <div class="skill-group skill-group--wide glass" data-aos="fade-up" data-aos-delay="240">
+      <h3><i class="fa-solid fa-gauge-high"></i> Proficiency snapshot <small style="font-family:var(--font-body);text-transform:none;letter-spacing:0;color:var(--muted);font-weight:400;">— self-assessed</small></h3>
+      <div class="proficiency">
+        <div class="proficiency__row">
+          <div class="proficiency__top"><span><i class="fa-solid fa-table-cells"></i>Excel</span><span>90%</span></div>
+          <div class="proficiency__track"><div class="proficiency__fill" style="--fill:90%"></div></div>
         </div>
-        <div class="col-lg-5 order-1 order-lg-2 text-center" data-aos="fade-left" data-aos-duration="1000">
-          <div class="profile-ring">
-            <div class="profile-ring-inner">
-              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23141b2b'/%3E%3Ctext x='50%25' y='55%25' font-size='20' fill='%23b9c8f0' text-anchor='middle' font-family='Inter'%3EArpit%3C/text%3E%3Ctext x='50%25' y='72%25' font-size='14' fill='%23b9c8f0' text-anchor='middle' font-family='Inter'%3EDubey%3C/text%3E%3C/svg%3E" alt="Arpit Dubey">
-            </div>
-          </div>
+        <div class="proficiency__row">
+          <div class="proficiency__top"><span><i class="fa-solid fa-database"></i>SQL</span><span>85%</span></div>
+          <div class="proficiency__track"><div class="proficiency__fill" style="--fill:85%"></div></div>
+        </div>
+        <div class="proficiency__row">
+          <div class="proficiency__top"><span><i class="fa-solid fa-chart-simple"></i>Power BI</span><span>85%</span></div>
+          <div class="proficiency__track"><div class="proficiency__fill" style="--fill:85%"></div></div>
+        </div>
+        <div class="proficiency__row">
+          <div class="proficiency__top"><span><i class="fa-brands fa-python"></i>Python (Pandas / NumPy)</span><span>75%</span></div>
+          <div class="proficiency__track"><div class="proficiency__fill" style="--fill:75%"></div></div>
         </div>
       </div>
     </div>
-    <div class="scroll-indicator"><i class="fas fa-chevron-down"></i></div>
-  </section>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section id="about" class="py-5">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10" data-aos="fade-up">
-          <div class="glass-card">
-            <h2 class="section-title">About <span class="highlight">Me</span></h2>
-            <p style="font-size:1.05rem; color: var(--text-soft);">I'm an MBA Business Analytics candidate at DAVV, Indore. I turn raw transaction data into decisions — not just dashboards.</p>
-            <div class="row g-4 mt-3">
-              <div class="col-md-6">
-                <p style="color: var(--text-soft);"><i class="fas fa-map-pin text-primary me-2"></i> Indore, M.P., India</p>
-                <p style="color: var(--text-soft);"><i class="fas fa-graduation-cap text-primary me-2"></i> MBA Business Analytics @ DAVV (2025–27)</p>
-                <p style="color: var(--text-soft);"><i class="fas fa-chart-pie text-primary me-2"></i> Focus: Excel · SQL · Power BI · Python</p>
-              </div>
-              <div class="col-md-6">
-                <p style="color: var(--text-soft);"><i class="fas fa-trophy text-primary me-2"></i> 8.46 CGPA</p>
-                <p style="color: var(--text-soft);"><i class="fas fa-certificate text-primary me-2"></i> Power BI, AI, Advanced Excel Certified</p>
-                <p style="color: var(--text-soft);"><i class="fas fa-heart text-primary me-2"></i> Data Storytelling & Visualization</p>
-              </div>
-            </div>
-          </div>
+<!-- CERTIFICATIONS -->
+<section class="certs" id="certifications">
+  <div class="section-label"><span>04</span> Certifications</div>
+  <div class="swiper certs-swiper" data-aos="fade-up">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="cert-card glass">
+          <div class="cert-card__icon"><i class="fa-solid fa-certificate"></i></div>
+          <h4>Power BI Data Analyst Certification</h4>
+          <div class="cert-card__meta"><span>Coursera</span><span>2026</span></div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="cert-card glass">
+          <div class="cert-card__icon"><i class="fa-solid fa-certificate"></i></div>
+          <h4>AI — Business Analyst</h4>
+          <div class="cert-card__meta"><span>Skill India Digital Hub</span><span>2026</span></div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="cert-card glass">
+          <div class="cert-card__icon"><i class="fa-solid fa-certificate"></i></div>
+          <h4>Advanced Excel</h4>
+          <div class="cert-card__meta"><span>Skill Learn Platform</span><span>2025</span></div>
         </div>
       </div>
     </div>
-  </section>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
 
-  <!-- SKILLS (removed HTML, Bootstrap, Git) -->
-  <section id="skills" class="py-5">
-    <div class="container">
-      <div class="text-center" data-aos="fade-up">
-        <h2 class="section-title">My <span class="highlight">Skills</span></h2>
-        <p class="section-subtitle">Tools & technologies I work with</p>
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-label"><span>05</span> Contact</div>
+  <h2 class="contact__title">Let's talk data.</h2>
+  <p class="contact__sub">Open to Business Analyst roles, internships and data projects.</p>
+
+  <div class="contact__layout">
+    <form class="contact-form glass" id="contactForm" data-aos="fade-right">
+      <div class="field">
+        <input type="text" id="cf-name" placeholder=" " required>
+        <label for="cf-name">Your name</label>
       </div>
-      <div class="row g-4">
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="glass-card">
-            <div class="d-flex align-items-center gap-3 mb-3"><i class="fas fa-file-excel fa-2x" style="color:#28A745;"></i><h5 class="mb-0" style="color:#fff;">Excel</h5></div>
-            <div class="skill-item"><div class="skill-label"><span>Pivot Tables &amp; Power Query</span><span>95%</span></div><div class="skill-bar"><div class="fill" style="width:95%"></div></div></div>
-            <div class="skill-item"><div class="skill-label"><span>DAX &amp; Formulas</span><span>88%</span></div><div class="skill-bar"><div class="fill" style="width:88%"></div></div></div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-          <div class="glass-card">
-            <div class="d-flex align-items-center gap-3 mb-3"><i class="fas fa-database fa-2x" style="color:#4479A1;"></i><h5 class="mb-0" style="color:#fff;">SQL</h5></div>
-            <div class="skill-item"><div class="skill-label"><span>Complex Joins &amp; Aggregations</span><span>85%</span></div><div class="skill-bar"><div class="fill" style="width:85%"></div></div></div>
-            <div class="skill-item"><div class="skill-label"><span>Window Functions</span><span>75%</span></div><div class="skill-bar"><div class="fill" style="width:75%"></div></div></div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-          <div class="glass-card">
-            <div class="d-flex align-items-center gap-3 mb-3"><i class="fab fa-python fa-2x" style="color:#3776AB;"></i><h5 class="mb-0" style="color:#fff;">Python</h5></div>
-            <div class="skill-item"><div class="skill-label"><span>Pandas / NumPy</span><span>80%</span></div><div class="skill-bar"><div class="fill" style="width:80%"></div></div></div>
-            <div class="skill-item"><div class="skill-label"><span>EDA &amp; Visualization</span><span>76%</span></div><div class="skill-bar"><div class="fill" style="width:76%"></div></div></div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="glass-card">
-            <div class="d-flex align-items-center gap-3 mb-3"><i class="fas fa-chart-bar fa-2x" style="color:#F2C811;"></i><h5 class="mb-0" style="color:#fff;">Power BI</h5></div>
-            <div class="skill-item"><div class="skill-label"><span>Dashboard Design</span><span>88%</span></div><div class="skill-bar"><div class="fill" style="width:88%"></div></div></div>
-            <div class="skill-item"><div class="skill-label"><span>DAX &amp; Data Modeling</span><span>80%</span></div><div class="skill-bar"><div class="fill" style="width:80%"></div></div></div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-          <div class="glass-card">
-            <div class="d-flex align-items-center gap-3 mb-3"><i class="fas fa-code fa-2x" style="color:#61DAFB;"></i><h5 class="mb-0" style="color:#fff;">Web &amp; Tools</h5></div>
-            <div class="d-flex flex-wrap gap-2 mt-2">
-              <span class="badge-soft">JavaScript</span>
-              <span class="badge-soft">CSS</span>
-              <span class="badge-soft">Jupyter</span>
-              <span class="badge-soft">VS Code</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-          <div class="glass-card">
-            <div class="d-flex align-items-center gap-3 mb-3"><i class="fas fa-brain fa-2x" style="color:#8B5CF6;"></i><h5 class="mb-0" style="color:#fff;">Business Analytics</h5></div>
-            <p style="color: var(--text-soft); font-size:0.95rem;">RFM Analysis · Customer Segmentation · KPI Dashboards · Storytelling</p>
-          </div>
-        </div>
+      <div class="field">
+        <input type="email" id="cf-email" placeholder=" " required>
+        <label for="cf-email">Your email</label>
+      </div>
+      <div class="field">
+        <textarea id="cf-message" placeholder=" " required></textarea>
+        <label for="cf-message">Message</label>
+      </div>
+      <button type="submit" class="btn btn--primary"><span><i class="fa-solid fa-paper-plane"></i> Send message</span></button>
+      <small id="formStatus" class="form-status"></small>
+      <small>Opens your email app with the message pre-filled — this site has no backend, so nothing sends silently.</small>
+    </form>
+
+    <div data-aos="fade-left">
+      <div class="contact__grid">
+        <a class="contact__card glass glow-card" href="mailto:arpitd.0804@gmail.com">
+          <i class="fa-solid fa-envelope contact__icon"></i>
+          <span class="contact__label">Email</span>
+          <span class="contact__value">arpitd.0804@gmail.com</span>
+        </a>
+        <a class="contact__card glass glow-card" href="https://www.linkedin.com/in/arpitdub" target="_blank" rel="noopener">
+          <i class="fa-brands fa-linkedin contact__icon"></i>
+          <span class="contact__label">LinkedIn</span>
+          <span class="contact__value">linkedin.com/in/arpitdub</span>
+        </a>
+        <a class="contact__card glass glow-card" href="https://github.com/arpitdub" target="_blank" rel="noopener">
+          <i class="fa-brands fa-github contact__icon"></i>
+          <span class="contact__label">GitHub</span>
+          <span class="contact__value">github.com/arpitdub</span>
+        </a>
+        <a class="contact__card glass glow-card" href="tel:+919575363463">
+          <i class="fa-solid fa-phone contact__icon"></i>
+          <span class="contact__label">Phone</span>
+          <span class="contact__value">+91 95753 63463</span>
+        </a>
+      </div>
+      <div class="map-embed">
+        <iframe title="Indore, Madhya Pradesh location map" loading="lazy"
+          src="https://www.google.com/maps?q=Indore,+Madhya+Pradesh,+India&output=embed"></iframe>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="py-5">
-    <div class="container">
-      <div class="text-center" data-aos="fade-up">
-        <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
-        <p class="section-subtitle">Data-driven solutions I've built</p>
-      </div>
-      <div class="row g-4">
-        <div class="col-md-6" data-aos="flip-up" data-aos-delay="100">
-          <div class="glass-card project-card">
-            <div class="d-flex justify-content-between"><span class="badge-soft"><i class="fas fa-chart-line me-1"></i> Power BI</span><span class="text-muted small">Apr 2026</span></div>
-            <h5 class="mt-3" style="color:#fff;">Retail Sales Dashboard</h5>
-            <p style="color: var(--text-soft);">12K+ transactions · 4 regions · 5 categories. Identified 42% revenue from Technology, 25% discount breakpoint.</p>
-            <div class="project-tags"><span>Excel</span><span>SQL</span><span>Power BI</span></div>
-            <a href="#" class="btn btn-primary-glow btn-sm mt-3"><i class="fas fa-eye me-1"></i> View</a>
-          </div>
-        </div>
-        <div class="col-md-6" data-aos="flip-up" data-aos-delay="200">
-          <div class="glass-card project-card">
-            <div class="d-flex justify-content-between"><span class="badge-soft"><i class="fab fa-python me-1"></i> Python</span><span class="text-muted small">Jul 2026</span></div>
-            <h5 class="mt-3" style="color:#fff;">Customer Segmentation</h5>
-            <p style="color: var(--text-soft);">RFM + K-Means on 50K transactions. 4 segments · 18% customers drive 48% revenue · churn-risk flagged.</p>
-            <div class="project-tags"><span>Python</span><span>Pandas</span><span>Scikit-learn</span></div>
-            <a href="#" class="btn btn-primary-glow btn-sm mt-3"><i class="fas fa-eye me-1"></i> View</a>
-          </div>
-        </div>
-      </div>
+  <footer class="footer">
+    <span>Indore, M.P — 452010, India</span>
+    <div class="footer__socials">
+      <a href="mailto:arpitd.0804@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/arpitdub" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/arpitdub" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
     </div>
-  </section>
+    <span>© <span id="year"></span> Arpit Dubey</span>
+  </footer>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="py-5">
-    <div class="container">
-      <div class="text-center" data-aos="fade-up">
-        <h2 class="section-title">Let's <span class="highlight">Talk</span></h2>
-        <p class="section-subtitle">Open to Business Analyst roles &amp; data projects</p>
-      </div>
-      <div class="row g-4 justify-content-center">
-        <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
-          <div class="glass-card text-center">
-            <div class="contact-icon mx-auto"><i class="fas fa-envelope"></i></div>
-            <h6 style="color:#fff;">Email</h6>
-            <p style="color: var(--text-soft);">arpitd.0804@gmail.com</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="150">
-          <div class="glass-card text-center">
-            <div class="contact-icon mx-auto"><i class="fab fa-linkedin-in"></i></div>
-            <h6 style="color:#fff;">LinkedIn</h6>
-            <p style="color: var(--text-soft);">/in/arpitdub</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3" data-aos="zoom-in
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
