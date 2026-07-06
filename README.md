@@ -17,8 +17,7 @@ assets/
 ```
 
 ## To finish setup
-1. Drop a square-ish photo into `<img width="1254" height="1254" alt="Profile" src="https://github.com/user-attachments/assets/a18e395a-1f0b-43f1-a3f3-067eb4543ed2" />
-
+1. Drop a square-ish photo into `images/profile.jpg`.
 2. Add your two project files into `projects/`, OR open `index.html` and change the two lines:
    ```html
    <a class="project__link" href="projects/retail-sales-dashboard.pdf">View dashboard →</a>
@@ -31,7 +30,6 @@ assets/
 ## To publish on GitHub Pages
 1. Push this folder to a GitHub repo (e.g. `arpitdub.github.io` for a root URL, or any repo name for a project page).
 2. Repo Settings → Pages → Source: `main` branch, `/ (root)`.
-
 3. Your site goes live at `https://<username>.github.io/` (or `/<repo-name>/`).
 
 ## Notes on the design
